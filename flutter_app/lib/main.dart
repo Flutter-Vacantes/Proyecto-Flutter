@@ -5,9 +5,8 @@ void main() {
 }
 
 Widget flutterApp() {
-  // Using ValueNotifier class allows to store a value and notify any listeners when the value changes.
-  final ValueNotifier<double> counterNotifier = ValueNotifier<double>(0);
-  counterNotifier.value = 1.0;
+  // Crea un ValueNotifier para el contador
+  final ValueNotifier<int> contadorNotifier = ValueNotifier<int>(0);
 
   return MaterialApp(
     title: 'Flutter App',
@@ -42,11 +41,11 @@ Widget flutterApp() {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ValueListenableBuilder<double>(
-              valueListenable: counterNotifier,
-              builder: (context, counter, child) {
+            ValueListenableBuilder<int>(
+              valueListenable: contadorNotifier,
+              builder: (context, contador, child) {
                 return Text(
-                  'Contador: $counter',
+                  'Contador: $contador',
                   style: const TextStyle(
                     fontSize: 40,
                     color: Color.fromARGB(255, 240, 65, 1),
@@ -55,25 +54,9 @@ Widget flutterApp() {
               },
             ),
             const SizedBox(height: 20),
-
-            /* Buttons. Row organize children elements horizontally.
-               Remember to modify the functions. */
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(onPressed: () {}, child: const Text('+1')),
-                ElevatedButton(onPressed: () {}, child: const Text('-1')),
-                ElevatedButton(onPressed: () {counterNotifier.value *= 10;}, child: const Text('x10')),
-                ElevatedButton(onPressed: () {}, child: const Text('%10')),
-                ElevatedButton(onPressed: () {}, child: const Text('+5')),
-                ElevatedButton(onPressed: () {}, child: const Text('Restart'))
-              ],
-            )
           ],
         ),
       ),
     ),
   );
-
-
 }
