@@ -6,7 +6,7 @@ void main() {
 
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
-  final ValueNotifier<int> contadorNotifier = ValueNotifier<int>(0);
+  final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
 
   return MaterialApp(
     title: 'Flutter App',
@@ -41,7 +41,7 @@ Widget flutterApp() {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ValueListenableBuilder<int>(
+            ValueListenableBuilder<double>(
               valueListenable: contadorNotifier,
               builder: (context, contador, child) {
                 return Text(
