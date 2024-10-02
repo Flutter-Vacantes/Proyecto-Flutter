@@ -6,7 +6,6 @@ void main() {
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
   final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
-  contadorNotifier.value = 0;
   return MaterialApp(
     title: 'Flutter App',
     theme: ThemeData(
