@@ -54,6 +54,12 @@ Widget flutterApp() {
               },
             ),
             const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: () {contadorNotifier.value /=10;}, child: const Text('/10')),
+              ],
+            )
           ],
         ),
       ),
