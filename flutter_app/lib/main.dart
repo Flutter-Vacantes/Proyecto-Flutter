@@ -53,7 +53,7 @@ Widget flutterApp() {
                 );
               },
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 20), // Espacio entre los botones
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
