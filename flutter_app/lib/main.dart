@@ -7,7 +7,6 @@ void main() {
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
   final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
-
   return MaterialApp(
     title: 'Flutter App',
     theme: ThemeData(
@@ -21,7 +20,8 @@ Widget flutterApp() {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(color: const Color.fromARGB(255, 128, 19, 3), width: 2),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 128, 19, 3), width: 2),
                 borderRadius: BorderRadius.circular(8),
               ),
               padding: const EdgeInsets.all(8),
@@ -54,6 +54,31 @@ Widget flutterApp() {
               },
             ),
             const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value *= 0.7071067811865476;
+                    },
+                    child: const Text('√4')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value /= 10;
+                    },
+                    child: const Text('/10')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value *= 10;
+                    },
+                    child: const Text('*10')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value += 1;
+                    },
+                    child: const Text('+1')),
+              ],
+            )
           ],
         ),
       ),
