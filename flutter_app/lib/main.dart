@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(flutterApp());
 }
-
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
-  final ValueNotifier<int> contadorNotifier = ValueNotifier<int>(0);
-
+  final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
   return MaterialApp(
     title: 'Flutter App',
     theme: ThemeData(
@@ -41,7 +39,7 @@ Widget flutterApp() {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ValueListenableBuilder<int>(
+            ValueListenableBuilder<double>(
               valueListenable: contadorNotifier,
               builder: (context, contador, child) {
                 return Text(
@@ -58,6 +56,7 @@ Widget flutterApp() {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(onPressed: () {contadorNotifier.value *=10;}, child: const Text('*10')),
+                ElevatedButton(onPressed: () {contadorNotifier.value +=1;}, child: const Text('+1')),
               ],
             )
           ],
