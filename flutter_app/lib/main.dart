@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(flutterApp());
 }
+
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
   final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
@@ -19,7 +20,8 @@ Widget flutterApp() {
           child: Center(
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(color: const Color.fromARGB(255, 128, 19, 3), width: 2),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 128, 19, 3), width: 2),
                 borderRadius: BorderRadius.circular(8),
               ),
               padding: const EdgeInsets.all(8),
@@ -55,9 +57,26 @@ Widget flutterApp() {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {contadorNotifier.value /=10;}, child: const Text('/10')),
-                ElevatedButton(onPressed: () {contadorNotifier.value *=10;}, child: const Text('*10')),
-                ElevatedButton(onPressed: () {contadorNotifier.value +=1;}, child: const Text('+1')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value /= 10;
+                    },
+                    child: const Text('/10')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value *= 10;
+                    },
+                    child: const Text('*10')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value += 1;
+                    },
+                    child: const Text('+1')),
+                ElevatedButton(
+                    onPressed: () {
+                      contadorNotifier.value *= 0;
+                    },
+                    child: const Text('RESET')),
               ],
             )
           ],
