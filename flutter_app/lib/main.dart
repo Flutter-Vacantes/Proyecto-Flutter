@@ -55,6 +55,7 @@ Widget flutterApp() {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                ElevatedButton(onPressed: () {contadorNotifier.value /=10;}, child: const Text('/10')),
                 ElevatedButton(onPressed: () {contadorNotifier.value *=10;}, child: const Text('*10')),
                 ElevatedButton(onPressed: () {contadorNotifier.value +=1;}, child: const Text('+1')),
               ],
