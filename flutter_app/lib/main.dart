@@ -63,12 +63,10 @@ Widget flutterApp() {
                 //the rest of the line is the function that will be called when the buttonm is pressed "onPressed". 
 
               ],
-            )
+            ),
           ],
         ),
       ),
     ),
   );
-
-  
 }
