@@ -7,6 +7,8 @@ void main() {
 Widget flutterApp() {
   // Crea un ValueNotifier para el contador
   final ValueNotifier<double> contadorNotifier = ValueNotifier<double>(0);
+  
+  
 
   return MaterialApp(
     title: 'Flutter App',
@@ -53,11 +55,21 @@ Widget flutterApp() {
                 );
               },
             ),
+ Botón-+5
             const SizedBox(height: 20), // Espacio entre los botones
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(onPressed: () {contadorNotifier.value +=5;}, child: const Text('+5')),
+
+            const SizedBox(height: 20),
+            Row( // Row widget to align the childeren in a horizontal line  
+              mainAxisAlignment: MainAxisAlignment.center, // this line centers the children
+              children: [ //this lists the childeren that will be aligned in the row
+                ElevatedButton(onPressed: () {contadorNotifier.value -=1;}, child: const Text('-1')), // the type of button in an ElevatedButton, 
+                //the rest of the line is the function that will be called when the buttonm is pressed "onPressed". 
+
+ main
               ],
             )
           ],
@@ -65,4 +77,6 @@ Widget flutterApp() {
       ),
     ),
   );
+
+  
 }
