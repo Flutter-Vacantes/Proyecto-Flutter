@@ -71,12 +71,10 @@ Widget flutterApp() {
 
  main
               ],
-            )
+            ),
           ],
         ),
       ),
     ),
   );
-
-  
 }
